@@ -55,17 +55,17 @@ class MinHeap:
     
     def up_heap(self):
         idx = self.size() - 1
-        while self.has_parent(idx): #dopoki ma rodzicow 
-            if self.elems[idx] < self.elems[self.parent(idx)]: #jesli rodzic jest mneijsze
-                self.swap(idx, self.parent(idx))  #to zmien z rodzicem 
+        while self.has_parent(idx): 
+            if self.elems[idx] < self.elems[self.parent(idx)]: 
+                self.swap(idx, self.parent(idx)) 
             idx-=1
           
                  
     def down_heap(self):
         idx = 0
-        while idx*3+1 <= self.size()-1: #dopóki idx ma dzieci
-            smi = self.get_min_child_idx(idx) #najmniejsze dziecko 
-            if self.elems[idx] < self.elems[smi]:#jesli juz bedzie wieksze to koniec
+        while idx*3+1 <= self.size()-1: 
+            smi = self.get_min_child_idx(idx) 
+            if self.elems[idx] < self.elems[smi]:
                 break 
             self.swap(idx, smi)
             idx = smi
