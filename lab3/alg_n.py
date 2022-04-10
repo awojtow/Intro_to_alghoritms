@@ -8,16 +8,16 @@ def search(pat, txt):
         raise ValueError("Pattern lenght is equal to text lenght")
     if (len(pat) > len(txt)):
         raise ValueError("Lenght of string is bigger than the lenght of data ")
-    for i in range(N - M + 1): #na kazda mozliwoa poczatkowa litere
+    for i in range(N - M + 1): 
         j = 0
 
-     #jesli znajdziemy patern
-        while (j < M): #patrzymy na fragment dlugosci patternu
-            if (txt[i + j] != pat[j]): #jesli znaki sie roznia to znaczy ze nie to, wiec break
+     
+        while (j < M): 
+            if (txt[i + j] != pat[j]): 
                 break
             j += 1
 
-        if (j == M): # jesli sie zgadza dlugosc przeszukana z dlugoscia paternu
+        if (j == M): 
             list.append(i)
 
     return list
